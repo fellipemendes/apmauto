@@ -1,0 +1,8 @@
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/pageobject/SerasaAPMPJ_PO.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/configurations/utils.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/configurations/driverFactory.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/configurations/Hooks.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/stepdefs/APM_ValidarModalUploadBase.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/configurations/contants.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/stepdefs/APM_UploadBasePj.java
+/home/fellipe.mendes/Documentos/git/apmauto/src/test/java/runner/TestRunner.java
