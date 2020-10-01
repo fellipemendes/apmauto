@@ -21,7 +21,7 @@ public class APM_UploadBasePj {
     private SerasaAPMPJ_PO apmpjPO;
     private utils oUtils;
 
-    //private JavascriptExecutor executorJS = (JavascriptExecutor)driver;
+    private JavascriptExecutor executorJS = (JavascriptExecutor)driver;
 
     public APM_UploadBasePj (SerasaAPMPJ_PO apmpj_PO, utils o_Utils){
         this.apmpjPO = apmpj_PO;
@@ -31,8 +31,8 @@ public class APM_UploadBasePj {
 
     private static String emailLogin ="";
 
-    @Dado("que acessei o APM")
-    public void que_acessei_o_APM() { apmpjPO.get(); }
+    @Dado("que acessei")
+    public void que_acessei) { apmpjPO.get(); }
 
     @Dado("^realizei login com usuário \"([^\"]*)\" e senha \"([^\"]*)\"$")
     public void realizei_login_com_usuário_e_senha(String Usuario, String Senha) throws Throwable {
@@ -44,22 +44,21 @@ public class APM_UploadBasePj {
     }
 
     @Então("deverá apresentar a tela inicial do APM")
-    public void deverá_apresentar_a_tela_inicial_do_APM() throws Throwable {
+    public void deverá_apresentar_a_tela_inicial_do_() throws Throwable {
         oUtils.waitElement(apmpjPO.linkMenuAPMPJ);
     }
 
-    @Quando("realizar o upload de uma base cliente PJ")
-    public void realizar_o_upload_de_uma_base_cliente_PJ() throws Throwable {
+    @Quando("realizar o")
+    public void realizar_o() throws Throwable {
         oUtils.waitElement(apmpjPO.txtCaminhoBase);
         apmpjPO.arquivoBaseUpload();
         oUtils.waitElement(apmpjPO.btnProsseguirUpload);
         apmpjPO.setCheckFilePJ();
-        //apmpjPO.setCheckFileModelagem();
         apmpjPO.clickProsseguirUploadBase();
     }
 
-    @Quando("realizar o upload de uma base cliente PJ tipo Estudo")
-    public void realizar_o_upload_de_uma_base_cliente_PJ_tipo_Estudo() throws Throwable {
+    @Quando("realizar o upload de uma base")
+    public void realizar_o_upload_de_uma_base() throws Throwable {
         apmpjPO.clickBasesmenu();
         oUtils.waitElement(apmpjPO.txtCaminhoBase);
         apmpjPO.arquivoBaseUpload();
@@ -81,12 +80,10 @@ public class APM_UploadBasePj {
 
     @E("base deverá aparecer na lista de bases")
     public void base_deverá_aparecer_na_lista_de_bases() {
-        oUtils.waitVisibilityOfElementLocated("XPATH", "/html[1]/body[1]/app-root[1]/div[1]/main[1]/div[1]/app-base[1]/section[2]/app-base-item[1]/article[1]/div[1]/div[1]/div[2]/h3[1]");
-        assertThat(apmpjPO.returnTextElement("XPATH", "/html[1]/body[1]/app-root[1]/div[1]/main[1]/div[1]/app-base[1]/section[2]/app-base-item[1]/article[1]/div[1]/div[1]/div[2]/h3[1]"))
+        oUtils.waitVisibilityOfElementLocated("XPATH", "/html[1]");
+        assertThat(apmpjPO.returnTextElement("XPATH", "/html[1]"))
                 .isEqualTo(SerasaAPMPJ_PO.getFileName());
-
-        assertThat(apmpjPO.returnTextElement("XPATH", "/html[1]/body[1]/app-root[1]/div[1]/main[1]/div[1]/app-base[1]/section[2]/app-base-item[1]/article[1]/div[1]/div[1]/div[2]/h4[1]"))
+        assertThat(apmpjPO.returnTextElement("XPATH", "/html[1]"))
                 .startsWith(emailLogin);
     }
-
 }
