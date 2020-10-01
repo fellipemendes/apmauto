@@ -1,8 +1,0 @@
-runner/TestRunner.class
-configurations/utils.class
-stepdefs/APM_UploadBasePj.class
-pageobject/SerasaAPMPJ_PO.class
-configurations/driverFactory.class
-stepdefs/APM_ValidarModalUploadBase.class
-configurations/Hooks.class
-configurations/contants.class
