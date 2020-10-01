@@ -16,10 +16,7 @@ public class Hooks {
     @Before
     public void setUp(){
         try {
-            //System.setProperty("webdriver.chrome.driver", "C:/uteis/ToolsQA/WebDrivers/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
-            //options.addArguments("window-size=1366x768");
-            //options.addArguments("headless");
             options.addArguments("--start-maximized");
             WebDriverManager.chromedriver().setup();
            driver = new ChromeDriver(options);

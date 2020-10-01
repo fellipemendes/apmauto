@@ -15,11 +15,11 @@ import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SerasaAPMPJ_PO extends LoadableComponent<SerasaAPMPJ_PO> {
+public class pages extends LoadableComponent<pages> {
 
     private utils oUtils;
     private contants oConstants;
-    private static final String fileName = "grp-sandbox-dextra_BASE_CLIENTE_105.csv";
+    private static final String fileName = "file.csv";
     private String URL = null;
 
     public static String getFileName() {
@@ -28,7 +28,7 @@ public class SerasaAPMPJ_PO extends LoadableComponent<SerasaAPMPJ_PO> {
 
     private JavascriptExecutor executorJS = (JavascriptExecutor) Hooks.driver;
 
-    public SerasaAPMPJ_PO(utils o_Utils, contants o_Constants){
+    public pages(utils o_Utils, contants o_Constants){
         this.oUtils = o_Utils;
         this.oConstants = o_Constants;
         String env_test = PropertiesUtil.getProperty("env.test").toUpperCase();
@@ -49,7 +49,7 @@ public class SerasaAPMPJ_PO extends LoadableComponent<SerasaAPMPJ_PO> {
     @FindBy(id="okta-signin-submit")
     private WebElement loginButton;
 
-    @FindBy(xpath="//span[contains(text(),'Ascend Portfolio Management PJ')]")
+    @FindBy(xpath="//span")
     public WebElement linkMenuAPMPJ;
 
     @FindBy(xpath="//span[contains(text(),'Bases')]")
@@ -79,7 +79,7 @@ public class SerasaAPMPJ_PO extends LoadableComponent<SerasaAPMPJ_PO> {
     @FindBy(id=fileName + "-PJ")
     private WebElement checkFilePJ;
 
-    @FindBy(xpath = "//span[contains(text(),'Analytical Sandbox (PF)')]")
+    @FindBy(xpath = "//span")
     private WebElement txtAnalyticalSandboxPF;
 
     @FindBy(xpath="//h4[contains(text(),'Modelagem')]")
@@ -147,11 +147,8 @@ public class SerasaAPMPJ_PO extends LoadableComponent<SerasaAPMPJ_PO> {
         oUtils.waitElement(btnProsseguirUpload);
         assertThat(txtFileName.getText()).isNotEmpty();
         assertThat(txtFileName.getText()).isEqualTo(fileName);
-        //assertThat(txtPortfolioManagement).isEqualTo(oConstants.portfolioTitle);
         assertThat(txtPF.getText()).isEqualTo(oConstants.pfTitle);
         assertThat(txtPJ.getText()).isEqualTo(oConstants.pjTitle);
-        //assertThat(checkFilePF.getAttribute("value")).isEqualTo(oConstants.pfCheckTitle);
-        //assertThat(checkFilePJ.getAttribute("value")).isEqualTo(oConstants.pjCheckTitle);
         assertThat(txtAnalyticalSandboxPF.getText()).isEqualTo(oConstants.analyticalPFTitle);
         assertThat(txtModelagem.getText()).isEqualTo(oConstants.modelagemTitle);
         assertThat(txtEstudos.getText()).isEqualTo(oConstants.estudosTitle);
